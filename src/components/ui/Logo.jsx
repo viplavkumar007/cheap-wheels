@@ -1,12 +1,19 @@
 export default function Logo({ size = 'default' }) {
-  const textSize = size === 'sm' ? 'text-xl' : 'text-2xl';
+  const textSize =
+    size === 'hero' ? 'text-3xl sm:text-5xl' : size === 'sm' ? 'text-xl' : 'text-2xl';
+  const markWidth = size === 'hero' ? 104 : size === 'sm' ? 40 : 52;
+  const markHeight = size === 'hero' ? 80 : size === 'sm' ? 32 : 40;
 
   return (
-    <div className="flex items-center gap-2 select-none">
+    <div
+      className={`flex items-center select-none ${
+        size === 'hero' ? 'flex-col sm:flex-row gap-4 sm:gap-5 text-center sm:text-left' : 'gap-2'
+      }`}
+    >
       {/* SVG Car silhouette with gold arc — inline recreation of the logo mark */}
       <svg
-        width={size === 'sm' ? 40 : 52}
-        height={size === 'sm' ? 32 : 40}
+        width={markWidth}
+        height={markHeight}
         viewBox="0 0 52 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +77,11 @@ export default function Logo({ size = 'default' }) {
           <span className="text-gold-500">WHEELS</span>
         </div>
         {size !== 'sm' && (
-          <div className="text-[9px] tracking-widest text-neutral-600 mt-0.5 font-medium uppercase">
+          <div
+            className={`tracking-widest text-neutral-600 font-medium uppercase ${
+              size === 'hero' ? 'mt-3 text-[11px] sm:text-sm' : 'mt-0.5 text-[9px]'
+            }`}
+          >
             Reliable · Affordable · Always With You
           </div>
         )}

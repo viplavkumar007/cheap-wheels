@@ -38,7 +38,7 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center py-12 md:py-20">
-          {/* Left — content */}
+          {/* Left - content */}
           <div className="order-2 lg:order-1">
             <motion.div {...fade(0.1)}>
               <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-gold-600 mb-6">
@@ -94,7 +94,10 @@ export default function Hero() {
             {/* Trust points */}
             <motion.div {...fade(0.52)} className="flex flex-wrap gap-x-5 gap-y-2">
               {hero.trustPoints.map(({ label }) => (
-                <span key={label} className="flex items-center gap-1.5 text-xs font-medium text-neutral-600">
+                <span
+                  key={label}
+                  className="flex items-center gap-1.5 text-xs font-medium text-neutral-600"
+                >
                   <CheckCircle2 size={13} className="text-gold-500 flex-shrink-0" />
                   {label}
                 </span>
@@ -102,23 +105,21 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — car image */}
+          {/* Right - logo */}
           <motion.div
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="order-1 lg:order-2 flex min-w-0 justify-center lg:justify-end"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           >
-            <div className="relative w-full max-w-lg lg:max-w-none">
-              {/* Image frame */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-full sm:max-w-lg lg:max-w-none">
+              <div className="relative flex min-h-[280px] sm:min-h-[340px] md:min-h-[440px] lg:min-h-[520px] items-center justify-center rounded-2xl bg-white shadow-2xl border border-neutral-100 px-5 sm:px-8 overflow-hidden">
                 <img
-                  src={hero.heroImage}
-                  alt="Premium rental car — Cheap Wheels"
-                  className="w-full h-[340px] md:h-[440px] lg:h-[520px] object-cover"
+                  src="/cheap-wheels-hero-logo.png"
+                  alt="Cheap Wheels"
+                  className="w-full max-w-[520px] object-contain"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/20 to-transparent" />
               </div>
 
               {/* Badge */}
@@ -126,7 +127,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7, duration: 0.4 }}
-                className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-card px-5 py-3 border border-neutral-100"
+                className="absolute bottom-3 left-3 sm:-bottom-4 sm:-left-4 bg-white rounded-2xl shadow-card px-4 sm:px-5 py-2.5 sm:py-3 border border-neutral-100"
               >
                 <div className="text-2xl font-display font-extrabold text-dark-900">500+</div>
                 <div className="text-xs text-neutral-500 font-medium">Happy Customers</div>
@@ -136,7 +137,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.85, duration: 0.4 }}
-                className="absolute -top-4 -right-4 bg-gold-500 rounded-2xl shadow-gold px-5 py-3"
+                className="absolute top-3 right-3 sm:-top-4 sm:-right-4 bg-gold-500 rounded-2xl shadow-gold px-4 sm:px-5 py-2.5 sm:py-3"
               >
                 <div className="text-2xl font-display font-extrabold text-dark-900">4.8★</div>
                 <div className="text-xs text-dark-900 font-semibold">Customer Rating</div>

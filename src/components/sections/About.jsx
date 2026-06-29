@@ -43,21 +43,20 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Image */}
+          {/* Logo image */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.65, ease: 'easeOut', delay: 0.15 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative flex h-[360px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-100 bg-white px-6 shadow-2xl md:h-[420px] lg:h-[520px]">
               <img
-                src={about.image}
-                alt="Cheap Wheels — premium fleet"
-                className="w-full h-[420px] lg:h-[520px] object-cover"
+                src="/cheap-wheels-hero-logo.png"
+                alt="Cheap Wheels"
+                className="w-full max-w-[560px] object-contain"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-dark-900/20 to-transparent" />
             </div>
             {/* Gold accent bar */}
             <div className="absolute -bottom-3 -left-3 w-24 h-24 border-4 border-gold-500 rounded-2xl -z-10" />

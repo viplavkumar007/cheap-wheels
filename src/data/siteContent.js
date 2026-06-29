@@ -43,7 +43,7 @@ export const services = [
       'Travel one way to your destination at affordable rates. Pay only for what you use, without return charges.',
     icon: 'ArrowRight',
     image:
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/6/6f/CallTaxi-TamilNadu1.jpg',
   },
   {
     id: 'outstation',
@@ -52,7 +52,7 @@ export const services = [
       'Comfortable outstation trips for round trips, family travel, business travel and long-distance journeys.',
     icon: 'MapPin',
     image:
-      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/9/93/Express_highway.jpg',
   },
   {
     id: 'rental',
@@ -61,7 +61,7 @@ export const services = [
       'Flexible car rental options for hourly, daily, weekly or monthly travel needs.',
     icon: 'Car',
     image:
-      'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600&q=80&auto=format&fit=crop',
+      'https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Dzire/11387/1731318279714/front-left-side-47.jpg',
   },
 ];
 
@@ -73,7 +73,7 @@ export const fleet = [
     transmission: 'Manual / Auto',
     type: 'Sedan',
     image:
-      'https://images.unsplash.com/photo-1611821064430-0d40291f0b86?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/e/e7/Suzuki_Dzire_II_1.2_GLX_Hybrid_Arctic_White_Pearl.jpg',
   },
   {
     name: 'Maruti Suzuki Ertiga',
@@ -82,7 +82,7 @@ export const fleet = [
     transmission: 'Manual',
     type: 'MPV',
     image:
-      'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/f/f9/Suzuki_Ertiga_NC_FL_1.5_GLX_Hybrid_Snow_White_Pearl.jpg',
   },
   {
     name: 'Toyota Innova Crysta',
@@ -91,7 +91,7 @@ export const fleet = [
     transmission: 'Manual / Auto',
     type: 'SUV',
     image:
-      'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/8/87/Toyota_Innova_Crysta_2.4_Z_front_right.jpg',
   },
   {
     name: 'Toyota Rumion',
@@ -100,7 +100,7 @@ export const fleet = [
     transmission: 'Automatic',
     type: 'MPV',
     image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop',
+      'https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Rumion/8650/1773142465050/front-left-side-47.jpg',
   },
   {
     name: 'Kia Carens',
@@ -109,7 +109,7 @@ export const fleet = [
     transmission: 'Manual / DCT',
     type: 'MPV',
     image:
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/1/19/2022_Kia_Carens_1.4_Luxury_Plus_%28India%29_front_view_02.jpg',
   },
   {
     name: 'Hyundai Creta',
@@ -118,7 +118,7 @@ export const fleet = [
     transmission: 'Manual / Auto',
     type: 'SUV',
     image:
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/2/25/2022_Hyundai_Creta_1.6_Plus_%28Chile%29_front_view.jpg',
   },
   {
     name: 'Mahindra Scorpio',
@@ -127,7 +127,7 @@ export const fleet = [
     transmission: 'Manual',
     type: 'SUV',
     image:
-      'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80&auto=format&fit=crop',
+      'https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Scorpio/10764/1778474504907/front-left-side-47.jpg',
   },
   {
     name: 'Tempo Traveller',
@@ -136,7 +136,7 @@ export const fleet = [
     transmission: 'Manual',
     type: 'Van',
     image:
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80&auto=format&fit=crop',
+      'https://upload.wikimedia.org/wikipedia/commons/6/61/Force_Traveller%2C_Leh-Manali_Highway.jpg',
   },
 ];
 

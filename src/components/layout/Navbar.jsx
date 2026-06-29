@@ -32,6 +32,23 @@ export default function Navbar() {
   }, []);
 
   const waLink = `https://wa.me/${brand.whatsapp}?text=${brand.waMessage}`;
+  const goToSection = (href) => {
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    setOpen(false);
+    window.setTimeout(() => {
+      const offset = 76;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      window.history.pushState(null, '', href);
+    }, 80);
+  };
+
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+    goToSection(href);
+  };
 
   return (
     <header
@@ -86,9 +103,12 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded-lg text-dark-900"
-            onClick={() => setOpen(!open)}
+            type="button"
+            className="relative z-[70] lg:hidden flex h-11 w-11 items-center justify-center rounded-lg text-dark-900 hover:bg-neutral-100"
+            onClick={() => setOpen((current) => !current)}
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -99,22 +119,23 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden bg-white border-t border-neutral-100 overflow-hidden"
+            className="fixed left-0 right-0 top-16 z-[60] lg:hidden bg-white border-t border-neutral-100 shadow-xl"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {nav.map(({ label, href }) => (
-                <a
+                <button
                   key={href}
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className="px-3 py-3 text-sm font-medium text-neutral-700 hover:text-dark-900 hover:bg-neutral-50 rounded-lg transition-colors"
+                  type="button"
+                  onClick={(event) => handleNavClick(event, href)}
+                  className="w-full rounded-lg px-3 py-3 text-left text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-dark-900 transition-colors"
                 >
                   {label}
-                </a>
+                </button>
               ))}
               <a
                 href={waLink}
