@@ -5,6 +5,7 @@ export const brand = {
   whatsappDisplay: '+91 91228 49580',
   email: 'Sjwheels6077@gmail.com',
   serviceArea: 'Pan India',
+  address: 'Keshrikunj Apartment, CP Thakur Path, Professor Colony, Shivpuri, Patna, Bihar 800023',
   waMessage: 'Hi%20Cheap%20Wheels%2C%20I%20want%20to%20enquire%20about%20car%20rental.',
 };
 
@@ -38,12 +39,12 @@ export const hero = {
 export const services = [
   {
     id: 'one-way',
-    title: 'Cheap Wheels One Way',
+    title: 'One Way Intercity Travel',
     description:
-      'Travel one way to your destination at affordable rates. Pay only for what you use, without return charges.',
+      'Book point-to-point intercity rides at affordable rates. Pay only for your drop journey, with no forced return fare added.',
     icon: 'ArrowRight',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/6/6f/CallTaxi-TamilNadu1.jpg',
+      'https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Rumion/8650/1773142465050/front-left-side-47.jpg',
   },
   {
     id: 'outstation',

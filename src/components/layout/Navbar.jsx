@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { ArrowRight, Menu, X, MessageCircle } from 'lucide-react';
 import Logo from '../ui/Logo';
 import { nav, brand } from '../../data/siteContent';
 
@@ -57,10 +57,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between gap-2 h-16 md:h-18">
           {/* Logo */}
-          <a href="#home" className="flex-shrink-0">
-            <Logo />
+          <a href="#home" className="min-w-0 flex-shrink">
+            <span className="block sm:hidden">
+              <Logo size="sm" />
+            </span>
+            <span className="hidden sm:block">
+              <Logo />
+            </span>
           </a>
 
           {/* Desktop nav */}
@@ -90,6 +95,14 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={(event) => handleNavClick(event, '#services')}
+              className="flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-dark-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-400"
+            >
+              Intercity Travel
+              <ArrowRight size={15} />
+            </button>
             <a
               href={waLink}
               target="_blank"
@@ -104,7 +117,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="relative z-[70] lg:hidden flex h-11 w-11 items-center justify-center rounded-lg text-dark-900 hover:bg-neutral-100"
+            className="relative z-[70] lg:hidden flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg text-dark-900 hover:bg-neutral-100"
             onClick={() => setOpen((current) => !current)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -137,6 +150,14 @@ export default function Navbar() {
                   {label}
                 </button>
               ))}
+              <button
+                type="button"
+                onClick={(event) => handleNavClick(event, '#services')}
+                className="mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-5 py-3 text-sm font-bold text-dark-900"
+              >
+                Intercity Travel
+                <ArrowRight size={15} />
+              </button>
               <a
                 href={waLink}
                 target="_blank"

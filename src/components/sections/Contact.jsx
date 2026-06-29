@@ -79,6 +79,16 @@ export default function Contact() {
                 <MapPin size={20} className="text-white" />
               </div>
               <div>
+                <div className="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-0.5">Address</div>
+                <div className="font-semibold text-dark-900 text-sm leading-relaxed">{brand.address}</div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-card border border-neutral-100">
+              <div className="w-11 h-11 rounded-xl bg-dark-900 flex items-center justify-center flex-shrink-0">
+                <MapPin size={20} className="text-white" />
+              </div>
+              <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-0.5">Service Area</div>
                 <div className="font-semibold text-dark-900">{brand.serviceArea}</div>
                 <div className="text-xs text-neutral-500 mt-0.5">One Way · Outstation · Rental</div>
