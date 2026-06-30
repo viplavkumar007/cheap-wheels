@@ -13,6 +13,16 @@ export default function Services() {
   return (
     <section id="services" className="bg-neutral-50">
       <div className="max-w-7xl mx-auto container-pad section-pad">
+        <div className="mb-8 rounded-2xl border border-gold-200 bg-gold-50 px-5 py-4 text-center shadow-sm">
+          <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">
+            Trip Rate Disclaimer
+          </p>
+          <div className="mt-3 grid gap-2 text-sm font-bold text-dark-900 sm:grid-cols-2">
+            <p>One Way: Dzire / Aura Rs. 20 per km | Ertiga / 7-seater Rs. 25 per km</p>
+            <p>Round Trip: Sedan / 5-seater Rs. 15 per km | Ertiga / 7-seater Rs. 18 per km</p>
+          </div>
+        </div>
+
         <div className="text-center mb-14">
           <SectionLabel>What We Offer</SectionLabel>
           <h2 className="font-display text-4xl md:text-5xl font-extrabold text-dark-900">

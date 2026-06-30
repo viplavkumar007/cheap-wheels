@@ -24,6 +24,17 @@ const fade = (delay = 0) => ({
 const inputClass =
   'w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-3 text-sm font-medium text-dark-900 outline-none transition focus:border-gold-500 focus:bg-white';
 
+const tripRates = {
+  'One Way': {
+    'Sedan / 5-seater': 'Rs. 20 per km',
+    'Ertiga / 7-seater': 'Rs. 25 per km',
+  },
+  'Round Trip': {
+    'Sedan / 5-seater': 'Rs. 15 per km',
+    'Ertiga / 7-seater': 'Rs. 18 per km',
+  },
+};
+
 const FieldLabel = ({ icon, children }) => (
   <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-neutral-500">
     {icon}
@@ -39,10 +50,13 @@ export default function Hero() {
     date: '',
     time: '',
     passengers: '',
-    carType: 'Sedan',
+    tripType: 'One Way',
+    carType: 'Sedan / 5-seater',
     name: '',
     phone: '',
   });
+
+  const selectedRate = tripRates[tripForm.tripType]?.[tripForm.carType] || 'Contact for quote';
 
   const updateTripForm = (event) => {
     const { name, value } = event.target;
@@ -53,13 +67,15 @@ export default function Hero() {
     event.preventDefault();
 
     const message = [
-      'Hi Cheap Wheels, I want to enquire about One Way Intercity Travel.',
+      `Hi Cheap Wheels, I want to enquire about ${tripForm.tripType} travel.`,
       `Pickup city: ${tripForm.pickup || 'Not shared'}`,
       `Drop city: ${tripForm.drop || 'Not shared'}`,
       `Travel date: ${tripForm.date || 'Not shared'}`,
       `Pickup time: ${tripForm.time || 'Not shared'}`,
       `Passengers: ${tripForm.passengers || 'Not shared'}`,
+      `Trip type: ${tripForm.tripType || 'Not shared'}`,
       `Preferred car: ${tripForm.carType || 'Not shared'}`,
+      `Rate shown: ${selectedRate}`,
       `Name: ${tripForm.name || 'Not shared'}`,
       `Phone: ${tripForm.phone || 'Not shared'}`,
     ].join('\n');
@@ -176,7 +192,7 @@ export default function Hero() {
                 <div>
                   <span className="inline-flex items-center gap-2 rounded-full bg-gold-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gold-700">
                     <MapPin size={13} />
-                    One Way Intercity
+                    One Way & Round Trip
                   </span>
                   <h2 className="mt-3 font-display text-3xl font-extrabold leading-none text-dark-900 sm:text-4xl">
                     Get Trip Quote
@@ -248,6 +264,19 @@ export default function Hero() {
                 </label>
 
                 <label className="block">
+                  <FieldLabel icon={<MapPin size={13} />}>Trip Type</FieldLabel>
+                  <select
+                    name="tripType"
+                    value={tripForm.tripType}
+                    onChange={updateTripForm}
+                    className={inputClass}
+                  >
+                    <option>One Way</option>
+                    <option>Round Trip</option>
+                  </select>
+                </label>
+
+                <label className="block">
                   <FieldLabel icon={<Car size={13} />}>Car Type</FieldLabel>
                   <select
                     name="carType"
@@ -255,10 +284,8 @@ export default function Hero() {
                     onChange={updateTripForm}
                     className={inputClass}
                   >
-                    <option>Sedan</option>
-                    <option>SUV</option>
-                    <option>Innova</option>
-                    <option>Tempo Traveller</option>
+                    <option>Sedan / 5-seater</option>
+                    <option>Ertiga / 7-seater</option>
                   </select>
                 </label>
 
@@ -285,6 +312,18 @@ export default function Hero() {
                     className={inputClass}
                   />
                 </label>
+              </div>
+
+              <div className="mt-4 rounded-2xl border border-gold-200 bg-gold-50 px-4 py-3">
+                <p className="text-xs font-bold uppercase tracking-wide text-gold-700">
+                  Estimated Rate
+                </p>
+                <p className="mt-1 text-lg font-extrabold text-dark-900">
+                  {selectedRate}
+                  <span className="ml-2 text-sm font-semibold text-neutral-600">
+                    for {tripForm.tripType} - {tripForm.carType}
+                  </span>
+                </p>
               </div>
 
               <button
