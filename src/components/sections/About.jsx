@@ -50,11 +50,11 @@ export default function About() {
             transition={{ duration: 0.65, ease: 'easeOut', delay: 0.15 }}
             className="relative"
           >
-            <div className="relative flex h-[360px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-100 bg-white px-6 shadow-2xl md:h-[420px] lg:h-[520px]">
+            <div className="relative flex h-[360px] items-center justify-center overflow-hidden rounded-2xl border border-neutral-100 bg-dark-900 px-6 shadow-2xl md:h-[420px] lg:h-[520px]">
               <img
-                src="/cheap-wheels-hero-logo.png"
-                alt="Cheap Wheels"
-                className="w-full max-w-[560px] object-contain"
+                src="/cheap-wheels-final-logo.png"
+                alt="Cheap Wheels Car Rental"
+                className="h-full w-full object-contain"
                 loading="lazy"
               />
             </div>

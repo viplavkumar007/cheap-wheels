@@ -57,14 +57,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2 h-16 md:h-18">
+        <div className="flex items-center justify-between gap-2 h-20">
           {/* Logo */}
           <a href="#home" className="min-w-0 flex-shrink">
-            <span className="block sm:hidden">
-              <Logo size="sm" />
+            <span className="flex items-center gap-2 sm:hidden">
+              <Logo size="mobileNav" />
+              <span className="max-w-[9.5rem] text-sm font-extrabold leading-tight text-dark-900">
+                Cheap Wheels One way cab
+              </span>
             </span>
             <span className="hidden sm:block">
-              <Logo />
+              <Logo size="nav" />
             </span>
           </a>
 
@@ -137,7 +140,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="fixed left-0 right-0 top-16 z-[60] xl:hidden bg-white border-t border-neutral-100 shadow-xl"
+            className="fixed left-0 right-0 top-20 z-[60] xl:hidden bg-white border-t border-neutral-100 shadow-xl"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {nav.map(({ label, href }) => (
