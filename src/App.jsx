@@ -10,6 +10,7 @@ import HowItWorks from './components/sections/HowItWorks';
 import Testimonials from './components/sections/Testimonials';
 import FAQ from './components/sections/FAQ';
 import CTABanner from './components/sections/CTABanner';
+import Payment from './components/sections/Payment';
 import Contact from './components/sections/Contact';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Testimonials />
         <FAQ />
         <CTABanner />
+        <Payment />
         <Contact />
       </main>
       <Footer />

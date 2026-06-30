@@ -16,8 +16,18 @@ export const nav = [
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Why Us', href: '#why-us' },
   { label: 'About', href: '#about' },
+  { label: 'Payment', href: '#payment' },
   { label: 'Contact', href: '#contact' },
 ];
+
+export const payment = {
+  merchant: 'SJWHEELS PRIVATE LIMITED',
+  displayName: 'Cheap Wheels',
+  provider: 'Paytm',
+  upiId: 'paytmqr16mmw5irar@paytm',
+  phone: '9122849580',
+  qrImage: '/paytm-qr.jpeg',
+};
 
 export const hero = {
   eyebrow: 'Reliable. Affordable. Always With You.',

@@ -69,7 +69,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Main navigation">
             {nav.map(({ label, href }) => {
               const id = href.replace('#', '');
               const isActive = active === id;
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <a
                   key={href}
                   href={href}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`relative whitespace-nowrap px-2.5 2xl:px-3 py-2 text-[13px] 2xl:text-sm font-medium transition-colors duration-200 ${
                     isActive ? 'text-dark-900' : 'text-neutral-600 hover:text-dark-900'
                   }`}
                 >
@@ -94,11 +94,11 @@ export default function Navbar() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-2 2xl:gap-3">
             <button
               type="button"
               onClick={(event) => handleNavClick(event, '#services')}
-              className="flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-bold text-dark-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-400"
+              className="flex items-center gap-2 whitespace-nowrap rounded-full bg-gold-500 px-4 2xl:px-5 py-2.5 text-sm font-bold text-dark-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-400"
             >
               Intercity Travel
               <ArrowRight size={15} />
@@ -107,7 +107,7 @@ export default function Navbar() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-dark-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark-700 transition-all duration-200 hover:-translate-y-0.5 shadow-sm"
+              className="flex items-center gap-2 whitespace-nowrap bg-dark-900 text-white px-4 2xl:px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark-700 transition-all duration-200 hover:-translate-y-0.5 shadow-sm"
             >
               <MessageCircle size={15} />
               Enquire Now
@@ -117,7 +117,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="relative z-[70] lg:hidden flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg text-dark-900 hover:bg-neutral-100"
+            className="relative z-[70] xl:hidden flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg text-dark-900 hover:bg-neutral-100"
             onClick={() => setOpen((current) => !current)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -137,7 +137,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="fixed left-0 right-0 top-16 z-[60] lg:hidden bg-white border-t border-neutral-100 shadow-xl"
+            className="fixed left-0 right-0 top-16 z-[60] xl:hidden bg-white border-t border-neutral-100 shadow-xl"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {nav.map(({ label, href }) => (
