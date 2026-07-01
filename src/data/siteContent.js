@@ -37,7 +37,7 @@ export const hero = {
   cta1: 'Enquire on WhatsApp',
   cta2: 'Explore Services',
   trustPoints: [
-    { label: 'Best Price Guaranteed' },
+    { label: 'Reliable Trip Support' },
     { label: 'Clean & Comfortable Cars' },
     { label: '24/7 Customer Support' },
     { label: 'Pan India Trips' },
@@ -51,7 +51,7 @@ export const services = [
     id: 'one-way',
     title: 'One Way Intercity Travel',
     description:
-      'Book point-to-point intercity rides at affordable rates. Pay only for your drop journey, with no forced return fare added.',
+      'Book point-to-point intercity rides with a simple drop-only journey experience.',
     icon: 'ArrowRight',
     image:
       'https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Rumion/8650/1773142465050/front-left-side-47.jpg',
@@ -154,8 +154,8 @@ export const fleet = [
 export const whyUs = [
   {
     icon: 'BadgeIndianRupee',
-    title: 'Affordable Pricing',
-    desc: 'Transparent fares with no hidden charges. Get the best rates for every trip.',
+    title: 'Simple Booking',
+    desc: 'Share your trip details and get clear guidance before you confirm your ride.',
   },
   {
     icon: 'Sparkles',
@@ -235,11 +235,11 @@ export const faqs = [
   },
   {
     q: 'Can I book one way travel?',
-    a: 'Absolutely. Our One Way service is available at affordable rates — you pay only for your one-way trip without any return fare.',
+    a: 'Absolutely. Our One Way service is available for point-to-point trips, so you can book a direct drop journey easily.',
   },
   {
-    q: 'Are prices fixed?',
-    a: 'Pricing depends on the route, car type and travel duration. Contact us on WhatsApp for an exact, no-obligation quotation.',
+    q: 'How do I confirm my booking?',
+    a: 'Share your route, car type and travel duration on WhatsApp, and our team will guide you through the confirmation.',
   },
 ];
 

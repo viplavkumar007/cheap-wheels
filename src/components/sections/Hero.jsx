@@ -24,17 +24,6 @@ const fade = (delay = 0) => ({
 const inputClass =
   'w-full rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-3 text-sm font-medium text-dark-900 outline-none transition focus:border-gold-500 focus:bg-white';
 
-const tripRates = {
-  'One Way': {
-    'Sedan / 5-seater': 'Rs. 20 per km',
-    'Ertiga / 7-seater': 'Rs. 25 per km',
-  },
-  'Round Trip': {
-    'Sedan / 5-seater': 'Rs. 15 per km',
-    'Ertiga / 7-seater': 'Rs. 18 per km',
-  },
-};
-
 const FieldLabel = ({ icon, children }) => (
   <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-neutral-500">
     {icon}
@@ -56,8 +45,6 @@ export default function Hero() {
     phone: '',
   });
 
-  const selectedRate = tripRates[tripForm.tripType]?.[tripForm.carType] || 'Contact for quote';
-
   const updateTripForm = (event) => {
     const { name, value } = event.target;
     setTripForm((current) => ({ ...current, [name]: value }));
@@ -75,7 +62,6 @@ export default function Hero() {
       `Passengers: ${tripForm.passengers || 'Not shared'}`,
       `Trip type: ${tripForm.tripType || 'Not shared'}`,
       `Preferred car: ${tripForm.carType || 'Not shared'}`,
-      `Rate shown: ${selectedRate}`,
       `Name: ${tripForm.name || 'Not shared'}`,
       `Phone: ${tripForm.phone || 'Not shared'}`,
     ].join('\n');
@@ -195,7 +181,7 @@ export default function Hero() {
                     One Way & Round Trip
                   </span>
                   <h2 className="mt-3 font-display text-3xl font-extrabold leading-none text-dark-900 sm:text-4xl">
-                    Get Trip Quote
+                    Plan Your Trip
                   </h2>
                 </div>
                 <div className="hidden rounded-2xl bg-dark-900 p-3 text-gold-400 sm:block">
@@ -314,18 +300,6 @@ export default function Hero() {
                 </label>
               </div>
 
-              <div className="mt-4 rounded-2xl border border-gold-200 bg-gold-50 px-4 py-3">
-                <p className="text-xs font-bold uppercase tracking-wide text-gold-700">
-                  Estimated Rate
-                </p>
-                <p className="mt-1 text-lg font-extrabold text-dark-900">
-                  {selectedRate}
-                  <span className="ml-2 text-sm font-semibold text-neutral-600">
-                    for {tripForm.tripType} - {tripForm.carType}
-                  </span>
-                </p>
-              </div>
-
               <button
                 type="submit"
                 className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-dark-900 px-6 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-dark-700 hover:shadow-lg"
@@ -335,7 +309,7 @@ export default function Hero() {
               </button>
 
               <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-                {['No return fare', 'Quick quote', 'Pan India'].map((item) => (
+                {['One way rides', 'Easy booking', 'Pan India'].map((item) => (
                   <span
                     key={item}
                     className="rounded-xl bg-gold-50 px-2 py-2 text-[11px] font-bold text-dark-900"
